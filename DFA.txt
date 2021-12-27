@@ -1,0 +1,21 @@
+This file is written to explain the structure of DFA
+
+TERMINALS:
+	KEYWORD
+	IDENTIFIER
+	OPERATOR
+	VALUE
+
+If the input is alphabetic -> identifier -> if the next input is alphanumeric -> identifier (until else input) -> before accept check if it is KW
+
+					 -> if the next input is something else -> error
+
+If the input is numeric -> value -> if the input is 0 -> value -> next input -> error
+				 -> if the input is 1-9 -> the next input is numeric -> value
+
+if the input is ; -> isComment? -> next input is ; too -> comment
+		                -> next input is something else -> error
+If the input is operator -> for +,-,/ -> next input should not be alphanumeric
+			-> for * -> mult -> next input is * too -> doublemult
+					 -> else -> error
+			-> for paranthesis there is no rule put it directly
